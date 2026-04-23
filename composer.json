@@ -1,0 +1,51 @@
+{
+    "name": "pepeiborra/traffic-reader",
+    "description": "Lightweight SIEM middleware for Laravel: visit tracking, threat detection, and security alerting.",
+    "type": "library",
+    "keywords": ["laravel", "traffic-reader", "security", "middleware", "threat-detection", "audit"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pepe Iborra",
+            "email": "pepe@example.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0",
+        "illuminate/notifications": "^10.0|^11.0|^12.0",
+        "illuminate/events": "^10.0|^11.0|^12.0",
+        "illuminate/cache": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^10.0|^11.0"
+    },
+    "suggest": {
+        "livewire/livewire": "Required to use the built-in AuditDashboard Livewire component (^3.0)",
+        "laravel/slack-notification-channel": "Required for Slack alert notifications"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pepeiborra\\TrafficReader\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pepeiborra\\TrafficReader\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pepeiborra\\TrafficReader\\TrafficReaderServiceProvider"
+            ],
+            "aliases": {
+                "Siem": "Pepeiborra\\TrafficReader\\Facades\\Siem"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
